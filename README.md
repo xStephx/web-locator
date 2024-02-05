@@ -10,6 +10,8 @@
 
 ### Во живо
 
+Можете да го проверите во живо [тука](https://xstephx.github.io/web-locator/).
+
 ### Користени технологии
 
 - HTML5
@@ -40,7 +42,7 @@ Web Locator is an application that allows easy and quick search and display of i
 
 ### Live 
 
-
+You can check live [here](https://xstephx.github.io/web-locator/).
 
 ### Technologies Used
 
