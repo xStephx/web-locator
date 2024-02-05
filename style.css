@@ -1,0 +1,292 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+/* Глобални променливи */
+:root {
+  --body-font: "Rubik", sans-serif;
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  font-family: var(--body-font);
+}
+
+/* Учитувач на аликација */
+.loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #d2cbcb;
+  z-index: 1000;
+}
+
+.loader h1 {
+  font-style: italic;
+  font-size: 2.5rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.loader h2 {
+  position: absolute;
+  bottom: 20px;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 200;
+  color: black;
+
+}
+
+.loader img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Главна страница */
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Секција за заглавие */
+.header-section {
+  position: relative;
+  width: 100%;
+  background-image: url("img/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  height: 20rem;
+}
+
+.header-section h1 {
+  font-size: 2rem;
+  color: var(--white);
+  margin-top: 1.9rem;
+  font-weight: 500;
+  word-spacing: 9px;
+}
+
+/* Формулар за пребарување */
+.search-form {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.input-field {
+  cursor: text;
+  width: 80%;
+  max-width: 29rem;
+  border-color: transparent;
+  border-radius: 15px 0 0 15px;
+}
+
+.input-field::placeholder {
+  font-size: 1.1rem;
+}
+
+.input-field[type="text"] {
+  font-size: 18px;
+  padding: 1.1rem;
+  font-weight: 400;
+}
+
+.submit-btn {
+  border-color: transparent;
+  background-color: var(--black);
+  padding: 1rem;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+
+.fa-angle-right {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+/* Секција за податоци */
+.data-section {
+  position: absolute;
+  z-index: 1;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: 15px;
+  width: 90%;
+  justify-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  line-height: 1.5rem;
+  box-shadow: 0px 2px 20px 0px #00000038;
+}
+
+hr {
+  display: none;
+}
+
+.data-section h2 {
+  color: var(--dark-gray);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.data-section p {
+  color: var(--very-dark-gray);
+  font-size: 3vw;
+  font-weight: 700;
+}
+
+/* Повеќе копче*/
+.more-btn {
+  border-color: transparent;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 15px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+
+/* Прозорец со повеќе информации */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.popup.show {
+  opacity: 1;
+}
+
+.popup h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.popup p {
+  margin-bottom: 8px;
+}
+
+.popup-close-btn {
+  padding: 5px 10px;
+  background-color: red;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: all 0.3s;
+}
+
+.popup-close-btn:hover {
+  opacity: 0.8;
+  padding: 5px 10px;
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/*  Секција за мапа */
+.map-section {
+  position: relative;
+  width: 100%;
+  height: 40rem;
+  z-index: 0;
+}
+
+#map {
+  height: 100%;
+}
+
+/* Респонзивност */
+
+@media (hover: hover) {
+
+  .submit-btn:hover,
+  .more-btn:hover {
+    transition: all ease-in-out 0.3s;
+    background-color: var(--very-dark-gray);
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .header-section {
+    height: 17.6rem;
+  }
+
+  .data-section {
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px 30px;
+    line-height: 2.4rem;
+    height: 9rem;
+    max-height: 90%;
+  }
+
+  .data-section article:first-child {
+    width: 14rem;
+    word-wrap: break-word;
+  }
+
+  .data-section p {
+    font-size: 1.5rem;
+  }
+
+  hr {
+    display: inline-block;
+    height: 60%;
+  }
+
+  .popup {
+    max-width: 350px;
+  }
+}

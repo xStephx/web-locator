@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Мета информации -->
+  <meta charset="UTF-8">
+  <meta name="author" content="Stefan Bojkovski">
+  <meta name="description" content="Proektna Zadaca, School Project, Web Lokator, Nace Bugjoni, KTA">
+  <meta name="keywords" content="Proektna Zadaca, School Project, Web Lokator, Nace Bugjoni, Kumanovo, KTA">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/icon.png">
+  <!-- Font Awesome библиотека -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Стил за кориснички интерфејс -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Мапа API -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <title>Веб Локатор</title>
+</head>
+
+<body>
+  <!-- Учитувач на аликација -->
+  <section class="loader">
+    <img src="img/icon.png">
+    <h1>Веб Локатор</h1>
+    <h2>Создадено од Стефан Бојковски</h2>
+  </section>
+  <!-- Главна страница -->
+  <main class="main-container">
+    <!-- Секција за заглавие -->
+    <section class="header-section">
+      <h1>Веб Локатор</h1>
+      <!-- Формулар за пребарување -->
+      <form method="post" class="search-form">
+        <input type="text" placeholder="Пребарајте IP адреса или домен" required class="input-field">
+
+        <button type="submit" class="submit-btn">
+          <i class="fa-solid fa-angle-right"></i>
+        </button>
+
+      </form>
+    </section>
+    <!-- Секција за податоци -->
+    <section class="data-section">
+
+      <!-- IP адреса -->
+      <article>
+        <h2>IP адреса</h2>
+        <p class="ipAddressField"></p>
+      </article>
+      <hr>
+      <!-- Локација -->
+      <article>
+        <h2><i class="fa-solid fa-location-dot"></i> Локација</h2>
+        <p class="locationInput"></p>
+      </article>
+      <hr>
+      <!-- Знаме -->
+      <article>
+        <h2>Знаме</h2>
+        <img class="country-flag" alt="Country Flag">
+      </article>
+      <hr>
+      <!-- Временска зона -->
+      <article>
+        <h2><i class="fa-regular fa-clock"></i> Временска зона</h2>
+        <p class="timezoneInput"></p>
+      </article>
+      <hr>
+      <!-- Интернат сервис провајдер -->
+      <article>
+        <h2>ISP</h2>
+        <p class="ispInput"></p>
+      </article>
+      <hr>
+      <!-- Државен домен -->
+      <article>
+        <h2><i class="fa-solid fa-code"></i> Државен домен</h2>
+        <p class="countryTLD"></p>
+      </article>
+      <hr>
+      <!-- Телефонскиот код -->
+      <article>
+        <h2>Телефонскиот код</h2>
+        <p class="callingNum"></p>
+      </article>
+
+      <hr>
+      <!-- Повеќе -->
+      <article>
+        <h2><i class="fa-solid fa-circle-info"></i> Повеќе</h2>
+        <button class="more-btn">Повеќе</button>
+      </article>
+    </section>
+
+    <!-- Секција за мапа -->
+    <section class="map-section">
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <!-- Мапа API -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type='module' src='config.js'></script>
+
+  <!--Интерактивност за апликација -->
+  <script type='module' src="app.js"></script>
+
+</body>
+
+</html>
