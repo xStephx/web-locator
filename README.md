@@ -6,7 +6,7 @@
 
 ### Преглед
 
-![](./img/desktop-preview.png)
+![](./img/desktop-preview.PNG)
 
 ### Во живо
 
@@ -35,7 +35,7 @@ Web Locator is an application that allows easy and quick search and display of i
 
 ### Overview
 
-![](./img/desktop-preview.png)
+![](./img/desktop-preview.PNG)
 
 
 ### Live 
