@@ -103,11 +103,17 @@ const mapLocation = (lat, lng) => {
 // Пребарување по IP и валидација
 submitBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  // Валидација на внесената IP адреса
+  // Валидација на внесената IP адреса (IPv4 или IPv6)
   if (
     inputField.value.match(
-      /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
-    )
+      /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
+    ) || // IPv4
+    inputField.value.match(
+      /^([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}$|^([0-9a-fA-F]{1,4}:){1,7}:|^([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}$/
+    ) || // IPv6
+    inputField.value.match(
+      /^([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{0,4}$/
+    ) // IPv6 (скратена)
   ) {
     randomIP = inputField.value;
     url = `https://api.ipgeolocation.io/ipgeo?apiKey=${API_KEY}=${randomIP}`;
